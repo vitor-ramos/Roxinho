@@ -1,5 +1,5 @@
 <resources>
     <style name="Theme.Roxinho" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/roxoEscuro</item>
     </style>
 </resources>

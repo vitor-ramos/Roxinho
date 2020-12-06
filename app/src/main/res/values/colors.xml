@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#9923C7</color>
-    <color name="colorAccent">#9320C6</color>
-    <color name="colorPrimaryDark">#66048D</color>
-    <color name="colorBlue">#2D8CBC</color>
-    <color name="colorGreen">#08622E</color>
+    <color name="roxo">#9923C7</color>
+    <color name="roxoClaro">#9320C6</color>
+    <color name="roxoEscuro">#66048D</color>
+    <color name="azul">#2D8CBC</color>
+    <color name="verde">#08622E</color>
 </resources>

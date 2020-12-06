@@ -8,24 +8,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.AmbientContext
 
 @Composable
-val colorPrimary
-    get() = Color(getColor(R.color.colorPrimary))
+val roxo
+    get() = Color(getColor(R.color.roxo))
 
 @Composable
-val colorPrimaryDark
-    get() = Color(getColor(R.color.colorPrimaryDark))
+val roxoEscuro
+    get() = Color(getColor(R.color.roxoEscuro))
 
 @Composable
-val colorAccent
-    get() = Color(getColor(R.color.colorAccent))
+val roxoClaro
+    get() = Color(getColor(R.color.roxoClaro))
 
 @Composable
-val colorBlue
-    get() = Color(getColor(R.color.colorBlue))
+val azul
+    get() = Color(getColor(R.color.azul))
 
 @Composable
-val colorGreen
-    get() = Color(getColor(R.color.colorGreen))
+val verde
+    get() = Color(getColor(R.color.verde))
 
 @ColorInt
 @Composable
