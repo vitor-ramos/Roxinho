@@ -27,6 +27,10 @@ val azul
 val verde
     get() = Color(getColor(R.color.verde))
 
+@Composable
+val cinzaClaro
+    get() = Color(getColor(R.color.cinzaClaro))
+
 @ColorInt
 @Composable
 private fun getColor(@ColorRes id: Int) = with(AmbientContext.current) {

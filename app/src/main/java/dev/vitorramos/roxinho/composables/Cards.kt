@@ -16,8 +16,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.vitorramos.roxinho.azul
-import dev.vitorramos.roxinho.verde
+import dev.vitorramos.roxinho.cinzaClaro
 import dev.vitorramos.roxinho.roxo
+import dev.vitorramos.roxinho.verde
 import java.text.DecimalFormat
 
 private val dec = DecimalFormat("#,###.##")
@@ -26,6 +27,7 @@ private val dec = DecimalFormat("#,###.##")
 fun CartaoCredito(
     fatura: Float,
     limiteDisponivel: Float,
+    visivel: Boolean,
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
     Column(Modifier.fillMaxWidth().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -36,17 +38,30 @@ fun CartaoCredito(
         Spacer(Modifier.height(8.dp))
         Text("Fatura atual", color = Color.Gray, fontSize = 12.sp)
         Spacer(Modifier.height(8.dp))
-        Text(
-            "R$ ${dec.format(fatura)}", color = azul, fontSize = 22.sp,
-            fontWeight = FontWeight.Bold,
-        )
-        Row {
-            Text("Limite disponível ", color = Color.Gray, fontSize = 12.sp)
-            Text(
-                "R$ ${dec.format(limiteDisponivel)}",
-                color = verde,
-                fontSize = 12.sp,
-            )
+        Surface(
+            Modifier.fillMaxWidth(),
+            color = if (visivel) Color.Transparent else cinzaClaro,
+        ) {
+            Column {
+                Text(
+                    if (visivel) "R$ ${dec.format(fatura)}" else "",
+                    color = azul,
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                )
+                Row {
+                    Text(
+                        if (visivel) "Limite disponível " else "",
+                        color = Color.Gray,
+                        fontSize = 12.sp
+                    )
+                    Text(
+                        if (visivel) "R$ ${dec.format(limiteDisponivel)}" else "",
+                        color = verde,
+                        fontSize = 12.sp,
+                    )
+                }
+            }
         }
     }
 }
@@ -54,6 +69,7 @@ fun CartaoCredito(
 @Composable
 fun Conta(
     saldo: Float,
+    visivel: Boolean,
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
     Column(Modifier.fillMaxWidth().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -64,17 +80,20 @@ fun Conta(
         Spacer(Modifier.height(8.dp))
         Text("Saldo disponível", color = Color.Gray, fontSize = 12.sp)
         Spacer(Modifier.height(8.dp))
-        Text(
-            "R$ ${dec.format(saldo)}",
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Bold,
-        )
+        Surface(Modifier.fillMaxWidth(), color = if (visivel) Color.Transparent else cinzaClaro) {
+            Text(
+                if (visivel) "R$ ${dec.format(saldo)}" else "",
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold,
+            )
+        }
     }
 }
 
 @Composable
 fun Emprestimo(
     emprestimo: Float,
+    visivel: Boolean,
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
     Column(Modifier.fillMaxWidth().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -83,12 +102,16 @@ fun Emprestimo(
             Text("Empréstimo", color = Color.Gray, fontSize = 14.sp)
         }
         Spacer(Modifier.height(8.dp))
-        Text("Valor disponível de até", fontSize = 14.sp)
-        Text(
-            "R$ ${dec.format(emprestimo)}",
-            fontSize = 14.sp,
-            fontWeight = FontWeight.Bold,
-        )
+        Surface(Modifier.fillMaxWidth(), color = if (visivel) Color.Transparent else cinzaClaro) {
+            Column {
+                Text(if (visivel) "Valor disponível de até" else "", fontSize = 14.sp)
+                Text(
+                    if (visivel) "R$ ${dec.format(emprestimo)}" else "",
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold,
+                )
+            }
+        }
         Spacer(Modifier.height(8.dp))
         OutlinedButton(
             {},
@@ -103,6 +126,7 @@ fun Emprestimo(
 fun Rewards(
     pontos: Int,
     pontosAcumulados: Int,
+    visivel: Boolean,
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
     Column(Modifier.fillMaxWidth().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -113,19 +137,31 @@ fun Rewards(
         Spacer(Modifier.height(8.dp))
         Text("Total", color = Color.Gray, fontSize = 12.sp)
         Spacer(Modifier.height(8.dp))
-        Text(
-            "${dec.format(pontos)} pts",
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Bold,
-        )
-        Row {
-            Text("Você acumulou", color = Color.Gray, fontSize = 12.sp)
-            Text(
-                " ${dec.format(pontosAcumulados)} ",
-                color = verde,
-                fontSize = 12.sp,
-            )
-            Text("pontos esse mês.", color = Color.Gray, fontSize = 12.sp)
+        Surface(Modifier.fillMaxWidth(), color = if (visivel) Color.Transparent else cinzaClaro) {
+            Column {
+                Text(
+                    if (visivel) "${dec.format(pontos)} pts" else "",
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                )
+                Row {
+                    Text(
+                        if (visivel) "Você acumulou" else "",
+                        color = Color.Gray,
+                        fontSize = 12.sp,
+                    )
+                    Text(
+                        if (visivel) " ${dec.format(pontosAcumulados)} " else "",
+                        color = verde,
+                        fontSize = 12.sp,
+                    )
+                    Text(
+                        if (visivel) "pontos esse mês." else "",
+                        color = Color.Gray,
+                        fontSize = 12.sp,
+                    )
+                }
+            }
         }
     }
 }

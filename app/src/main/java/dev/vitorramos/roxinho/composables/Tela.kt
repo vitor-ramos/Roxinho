@@ -25,14 +25,15 @@ fun Tela(
     emprestimo: Float,
     pontos: Int,
     pontosAcumulados: Int,
+    visivel: Boolean,
 ) = Surface(color = Color(0xFF8A05BE)) {
     Column(Modifier.fillMaxSize()) {
         Cabecalho(Modifier, nome, cliqueOcultar, cliqueConfiguracoes)
         ScrollableColumn(Modifier.weight(1f)) {
-            CartaoCredito(fatura, limiteDisponivel)
-            Conta(saldo)
-            Emprestimo(emprestimo)
-            Rewards(pontos, pontosAcumulados)
+            CartaoCredito(fatura, limiteDisponivel, visivel)
+            Conta(saldo, visivel)
+            Emprestimo(emprestimo, visivel)
+            Rewards(pontos, pontosAcumulados, visivel)
         }
         ScrollableRow(Modifier.padding(0.dp, 16.dp)) {
             atalhos.forEachIndexed { i, data ->
