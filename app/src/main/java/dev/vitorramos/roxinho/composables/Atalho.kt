@@ -1,10 +1,7 @@
 package dev.vitorramos.roxinho.composables
 
 import androidx.compose.foundation.*
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.Surface
@@ -21,7 +18,7 @@ import dev.vitorramos.roxinho.roxoClaro
 @Composable
 fun Atalho(
     modifier: Modifier = Modifier,
-    icone: ImageVector,
+    icone: ImageVector?,
     texto: String,
 ) = Surface(
     modifier.clickable(
@@ -35,7 +32,8 @@ fun Atalho(
         Modifier.size(88.dp).padding(8.dp),
         Arrangement.SpaceBetween,
     ) {
-        Icon(icone, tint = Color.White)
+        if (icone != null) Icon(icone, tint = Color.White)
+        else Spacer(Modifier)
         Text(texto, color = Color.White, fontSize = 14.sp)
     }
 }

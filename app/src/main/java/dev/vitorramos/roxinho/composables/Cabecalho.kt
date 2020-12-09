@@ -8,36 +8,37 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.outlined.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ContentDrawScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.vitorramos.roxinho.roxoClaro
 
 @Composable
 fun Cabecalho(
-    modifier: Modifier = Modifier,
     nome: String,
     cliqueOcultar: () -> Unit,
+    iconeVisibilidade: ImageVector?,
 ) = Row(
-    modifier.fillMaxWidth().padding(16.dp),
+    Modifier.fillMaxWidth().padding(16.dp),
     Arrangement.SpaceBetween,
     Alignment.CenterVertically,
 ) {
     Text("Olá, $nome", color = Color.White, fontSize = 22.sp)
     Row {
-        Surface(
-            Modifier.size(48.dp).clickable(onClick = cliqueOcultar),
-            RoundedCornerShape(24.dp),
-            roxoClaro,
-        ) {
-            Icon(Icons.Outlined.Star, tint = Color.White)
+        iconeVisibilidade?.let { iconeVisibilidade ->
+            Surface(
+                Modifier.size(48.dp).clickable(onClick = cliqueOcultar),
+                RoundedCornerShape(24.dp),
+                roxoClaro,
+            ) {
+                Icon(iconeVisibilidade, tint = Color.White)
+            }
+            Spacer(Modifier.width(8.dp))
         }
-        Spacer(Modifier.width(8.dp))
         Surface(
             Modifier.size(48.dp).clickable(onClick = {}),
             RoundedCornerShape(24.dp),

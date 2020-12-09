@@ -9,8 +9,10 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.loadVectorResource
 import androidx.compose.ui.unit.dp
-import dev.vitorramos.roxinho.*
+import dev.vitorramos.roxinho.DadosAtalhos
+import dev.vitorramos.roxinho.R
 
 @Composable
 fun Tela(
@@ -26,7 +28,12 @@ fun Tela(
     visivel: Boolean,
 ) = Surface(color = Color(0xFF8A05BE)) {
     Column(Modifier.fillMaxSize()) {
-        Cabecalho(Modifier, nome, cliqueOcultar)
+        val icon = if (visivel) R.drawable.ic_visibilidade_riscado else R.drawable.ic_visibilidade
+        Cabecalho(
+            nome,
+            cliqueOcultar,
+            loadVectorResource(icon).resource.resource
+        )
         ScrollableColumn(Modifier.weight(1f)) {
             CartaoCredito(fatura, limiteDisponivel, visivel)
             Conta(saldo, visivel)

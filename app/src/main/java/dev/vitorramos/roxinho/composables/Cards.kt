@@ -3,22 +3,16 @@ package dev.vitorramos.roxinho.composables
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Build
-import androidx.compose.material.icons.outlined.Email
-import androidx.compose.material.icons.outlined.Person
-import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.loadVectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.vitorramos.roxinho.azul
-import dev.vitorramos.roxinho.cinzaClaro
-import dev.vitorramos.roxinho.roxo
-import dev.vitorramos.roxinho.verde
+import dev.vitorramos.roxinho.*
+import dev.vitorramos.roxinho.R
 import java.text.DecimalFormat
 
 private val dec = DecimalFormat("#,###.##")
@@ -31,8 +25,10 @@ fun CartaoCredito(
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
     Column(Modifier.fillMaxWidth().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Icon(Icons.Outlined.ShoppingCart, tint = Color.Gray)
-            Spacer(Modifier.width(8.dp))
+            loadVectorResource(R.drawable.ic_cartao_credito).resource.resource?.let {
+                Icon(it, tint = Color.Gray)
+                Spacer(Modifier.width(8.dp))
+            }
             Text("Cartão de Crédito", color = Color.Gray, fontSize = 14.sp)
         }
         Spacer(Modifier.height(8.dp))
@@ -73,8 +69,10 @@ fun Conta(
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
     Column(Modifier.fillMaxWidth().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Icon(Icons.Outlined.Build, tint = Color.Gray)
-            Spacer(Modifier.width(8.dp))
+            loadVectorResource(R.drawable.ic_dinheiro).resource.resource?.let {
+                Icon(it, tint = Color.Gray)
+                Spacer(Modifier.width(8.dp))
+            }
             Text("Conta", color = Color.Gray, fontSize = 14.sp)
         }
         Spacer(Modifier.height(8.dp))
@@ -97,8 +95,10 @@ fun Emprestimo(
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
     Column(Modifier.fillMaxWidth().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Icon(Icons.Outlined.Email, tint = Color.Gray)
-            Spacer(Modifier.width(8.dp))
+            loadVectorResource(R.drawable.ic_dinheiro).resource.resource?.let {
+                Icon(it, tint = Color.Gray)
+                Spacer(Modifier.width(8.dp))
+            }
             Text("Empréstimo", color = Color.Gray, fontSize = 14.sp)
         }
         Spacer(Modifier.height(8.dp))
@@ -130,8 +130,10 @@ fun Rewards(
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
     Column(Modifier.fillMaxWidth().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Icon(Icons.Outlined.Person, tint = Color.Gray)
-            Spacer(Modifier.width(8.dp))
+            loadVectorResource(R.drawable.ic_rewards).resource.resource?.let {
+                Icon(it, tint = Color.Gray)
+                Spacer(Modifier.width(8.dp))
+            }
             Text("Rewards", color = Color.Gray, fontSize = 14.sp)
         }
         Spacer(Modifier.height(8.dp))
