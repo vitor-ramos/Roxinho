@@ -1,6 +1,6 @@
 package dev.vitorramos.roxinho.composables
 
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
@@ -11,6 +11,7 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ContentDrawScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -22,7 +23,6 @@ fun Cabecalho(
     modifier: Modifier = Modifier,
     nome: String,
     cliqueOcultar: () -> Unit,
-    cliqueConfiguracoes: () -> Unit,
 ) = Row(
     modifier.fillMaxWidth().padding(16.dp),
     Arrangement.SpaceBetween,
@@ -39,7 +39,7 @@ fun Cabecalho(
         }
         Spacer(Modifier.width(8.dp))
         Surface(
-            Modifier.size(48.dp).clickable(onClick = cliqueConfiguracoes),
+            Modifier.size(48.dp).clickable(onClick = {}),
             RoundedCornerShape(24.dp),
             roxoClaro,
         ) {

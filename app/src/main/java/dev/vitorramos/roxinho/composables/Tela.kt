@@ -15,9 +15,7 @@ import dev.vitorramos.roxinho.*
 @Composable
 fun Tela(
     atalhos: List<DadosAtalhos>,
-    cliqueAtalho: (index: Int) -> Unit,
     cliqueOcultar: () -> Unit,
-    cliqueConfiguracoes: () -> Unit,
     nome: String,
     fatura: Float,
     limiteDisponivel: Float,
@@ -28,7 +26,7 @@ fun Tela(
     visivel: Boolean,
 ) = Surface(color = Color(0xFF8A05BE)) {
     Column(Modifier.fillMaxSize()) {
-        Cabecalho(Modifier, nome, cliqueOcultar, cliqueConfiguracoes)
+        Cabecalho(Modifier, nome, cliqueOcultar)
         ScrollableColumn(Modifier.weight(1f)) {
             CartaoCredito(fatura, limiteDisponivel, visivel)
             Conta(saldo, visivel)
@@ -41,7 +39,6 @@ fun Tela(
                 val end = if (i == atalhos.lastIndex) 16.dp else 8.dp
                 Atalho(
                     Modifier.padding(start, 0.dp, end, 0.dp),
-                    { cliqueAtalho(i) },
                     data.icone,
                     data.texto,
                 )

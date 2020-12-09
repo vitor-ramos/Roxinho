@@ -1,7 +1,6 @@
 package dev.vitorramos.roxinho
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
@@ -14,15 +13,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            var visivel by remember { mutableStateOf(true) }
-
-            val cliqueOcultar = { visivel = !visivel }
-            val cliqueConfiguracoes = {
-
-            }
-            val cliqueAtalho: (Int) -> Unit = {
-                Toast.makeText(this, "Clicou no atalho $it", Toast.LENGTH_SHORT).show()
-            }
             val atalhos = listOf(
                 DadosAtalhos(Icons.Outlined.Edit, "Pix"),
                 DadosAtalhos(Icons.Outlined.Edit, "Pagar"),
@@ -40,12 +30,13 @@ class MainActivity : AppCompatActivity() {
                 DadosAtalhos(Icons.Outlined.Edit, "Me ajuda"),
             )
 
+            var visivel by remember { mutableStateOf(true) }
+            val cliqueOcultar = { visivel = !visivel }
+
             MaterialTheme {
                 Tela(
                     atalhos,
-                    cliqueAtalho,
                     cliqueOcultar,
-                    cliqueConfiguracoes,
                     "Alex",
                     1120.56f,
                     1879.44f,
