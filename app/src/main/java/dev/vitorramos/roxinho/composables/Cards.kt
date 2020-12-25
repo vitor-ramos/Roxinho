@@ -115,7 +115,7 @@ fun Emprestimo(
         Spacer(Modifier.height(8.dp))
         OutlinedButton(
             {},
-            border = BorderStroke(ButtonConstants.OutlinedBorderSize, roxo),
+            border = BorderStroke(ButtonDefaults.OutlinedBorderSize, roxo),
         ) {
             Text("SIMULAR EMPRÉSTIMO", color = roxo)
         }

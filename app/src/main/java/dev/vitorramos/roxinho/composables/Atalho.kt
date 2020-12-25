@@ -6,7 +6,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.material.ripple.rememberRippleIndication
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -23,7 +23,7 @@ fun Atalho(
 ) = Surface(
     modifier.clickable(
         onClick = {},
-        indication = rememberRippleIndication(color = Color.White),
+        indication = rememberRipple(color = Color.White),
     ),
     shape = RoundedCornerShape(4.dp),
     color = roxoClaro,
