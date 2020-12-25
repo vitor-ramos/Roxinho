@@ -1,43 +1,13 @@
 package dev.vitorramos.roxinho
 
-import android.os.Build
-import androidx.annotation.ColorInt
-import androidx.annotation.ColorRes
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.AmbientContext
 
-@Composable
-val roxo
-    get() = Color(getColor(R.color.roxo))
+val roxo = Color(0xFF9923C7)
 
-@Composable
-val roxoEscuro
-    get() = Color(getColor(R.color.roxoEscuro))
+val roxoClaro = Color(0xFF9320C6)
 
-@Composable
-val roxoClaro
-    get() = Color(getColor(R.color.roxoClaro))
+val azul = Color(0xFF2D8CBC)
 
-@Composable
-val azul
-    get() = Color(getColor(R.color.azul))
+val verde = Color(0xFF08622E)
 
-@Composable
-val verde
-    get() = Color(getColor(R.color.verde))
-
-@Composable
-val cinzaClaro
-    get() = Color(getColor(R.color.cinzaClaro))
-
-@ColorInt
-@Composable
-private fun getColor(@ColorRes id: Int) = with(AmbientContext.current) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        resources.getColor(id, theme)
-    } else {
-        @Suppress("DEPRECATION")
-        resources.getColor(id)
-    }
-}
+val cinzaClaro = Color(0xFFEEEEEE)

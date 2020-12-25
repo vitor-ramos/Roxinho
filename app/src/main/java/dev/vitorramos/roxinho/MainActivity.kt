@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val atalhos = listOf(
-                DadosAtalhos(Icons.Outlined.Edit, "Pix"),
                 DadosAtalhos(
                     loadVectorResource(R.drawable.ic_codigo_barra).resource.resource,
                     "Pagar",
@@ -36,10 +35,6 @@ class MainActivity : AppCompatActivity() {
                     "Depositar",
                 ),
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_dinheiro).resource.resource,
-                    "Emprestimo",
-                ),
-                DadosAtalhos(
                     loadVectorResource(R.drawable.ic_cartao_credito).resource.resource,
                     "Cartão virtual",
                 ),
@@ -54,18 +49,6 @@ class MainActivity : AppCompatActivity() {
                 DadosAtalhos(
                     loadVectorResource(R.drawable.ic_cadeado).resource.resource,
                     "Bloquear cartão",
-                ),
-                DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_dinheiro).resource.resource,
-                    "Cobrar",
-                ),
-                DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_dinheiro).resource.resource,
-                    "Dividir valor",
-                ),
-                DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_dinheiro).resource.resource,
-                    "Doação",
                 ),
                 DadosAtalhos(
                     loadVectorResource(R.drawable.ic_ajuda).resource.resource,
