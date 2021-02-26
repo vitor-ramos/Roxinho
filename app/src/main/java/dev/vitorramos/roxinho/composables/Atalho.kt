@@ -16,8 +16,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import dev.vitorramos.roxinho.R
 import dev.vitorramos.roxinho.roxoClaro
 
 @Composable
@@ -40,8 +43,14 @@ fun Atalho(
             .padding(8.dp),
         Arrangement.SpaceBetween,
     ) {
-        // TODO: content description
         Icon(icone, null, tint = Color.White)
         Text(texto, color = Color.White, fontSize = 14.sp)
     }
 }
+
+@Preview
+@Composable
+fun AtalhoPreview() = Atalho(
+    icone = painterResource(id = R.drawable.ic_dinheiro),
+    texto = "Transferir",
+)

@@ -45,7 +45,7 @@ fun Cabecalho(
             Icon(
                 painterResource(icone),
                 if (visivel) "Ocultar valores" else "Exibir valores",
-                Modifier.padding(8.dp),
+                Modifier.padding(12.dp),
                 Color.White,
             )
         }
@@ -60,7 +60,7 @@ fun Cabecalho(
             Icon(
                 Icons.Outlined.Settings,
                 "Configurações",
-                Modifier.padding(8.dp),
+                Modifier.padding(12.dp),
                 Color.White,
             )
         }
@@ -69,4 +69,4 @@ fun Cabecalho(
 
 @Preview
 @Composable
-fun Preview() = Cabecalho("Alex", {}, true)
+fun CabecalhoPreview() = Cabecalho("Alex", {}, true)

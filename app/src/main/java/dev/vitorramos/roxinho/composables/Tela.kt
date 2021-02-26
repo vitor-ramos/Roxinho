@@ -13,6 +13,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import dev.vitorramos.roxinho.DadosAtalhos
+import dev.vitorramos.roxinho.composables.cards.CartaoCredito
+import dev.vitorramos.roxinho.composables.cards.Conta
+import dev.vitorramos.roxinho.composables.cards.Emprestimo
+import dev.vitorramos.roxinho.composables.cards.Rewards
 
 @Composable
 fun Tela(
