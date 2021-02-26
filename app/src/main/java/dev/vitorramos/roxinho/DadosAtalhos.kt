@@ -1,5 +1,5 @@
 package dev.vitorramos.roxinho
 
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.painter.Painter
 
-data class DadosAtalhos(val icone: ImageVector?, val texto: String)
+data class DadosAtalhos(val icone: Painter, val texto: String)

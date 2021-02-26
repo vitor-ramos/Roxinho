@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.loadVectorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -23,12 +23,15 @@ fun CartaoCredito(
     limiteDisponivel: Float,
     visivel: Boolean,
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
-    Column(Modifier.fillMaxWidth().padding(16.dp)) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            loadVectorResource(R.drawable.ic_cartao_credito).resource.resource?.let {
-                Icon(it, tint = Color.Gray)
-                Spacer(Modifier.width(8.dp))
-            }
+            // TODO: content description
+            Icon(painterResource(R.drawable.ic_cartao_credito), null, tint = Color.Gray)
+            Spacer(Modifier.width(8.dp))
             Text("Cartão de Crédito", color = Color.Gray, fontSize = 14.sp)
         }
         Spacer(Modifier.height(8.dp))
@@ -67,12 +70,16 @@ fun Conta(
     saldo: Float,
     visivel: Boolean,
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
-    Column(Modifier.fillMaxWidth().padding(16.dp)) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            loadVectorResource(R.drawable.ic_dinheiro).resource.resource?.let {
-                Icon(it, tint = Color.Gray)
-                Spacer(Modifier.width(8.dp))
-            }
+            // TODO: content description
+            Icon(painterResource((R.drawable.ic_dinheiro)), null, tint = Color.Gray)
+            Spacer(Modifier.width(8.dp))
+
             Text("Conta", color = Color.Gray, fontSize = 14.sp)
         }
         Spacer(Modifier.height(8.dp))
@@ -93,12 +100,15 @@ fun Emprestimo(
     emprestimo: Float,
     visivel: Boolean,
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
-    Column(Modifier.fillMaxWidth().padding(16.dp)) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            loadVectorResource(R.drawable.ic_dinheiro).resource.resource?.let {
-                Icon(it, tint = Color.Gray)
-                Spacer(Modifier.width(8.dp))
-            }
+            // TODO: content description
+            Icon(painterResource(R.drawable.ic_dinheiro), null, tint = Color.Gray)
+            Spacer(Modifier.width(8.dp))
             Text("Empréstimo", color = Color.Gray, fontSize = 14.sp)
         }
         Spacer(Modifier.height(8.dp))
@@ -128,12 +138,15 @@ fun Rewards(
     pontosAcumulados: Int,
     visivel: Boolean,
 ) = Card(Modifier.padding(16.dp, 8.dp)) {
-    Column(Modifier.fillMaxWidth().padding(16.dp)) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            loadVectorResource(R.drawable.ic_rewards).resource.resource?.let {
-                Icon(it, tint = Color.Gray)
-                Spacer(Modifier.width(8.dp))
-            }
+            // TODO: content description
+            Icon(painterResource(R.drawable.ic_rewards), null, tint = Color.Gray)
+            Spacer(Modifier.width(8.dp))
             Text("Rewards", color = Color.Gray, fontSize = 14.sp)
         }
         Spacer(Modifier.height(8.dp))

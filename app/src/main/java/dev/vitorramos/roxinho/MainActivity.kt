@@ -1,14 +1,14 @@
 package dev.vitorramos.roxinho
 
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.platform.setContent
-import androidx.compose.ui.res.loadVectorResource
+import androidx.compose.ui.res.painterResource
 import dev.vitorramos.roxinho.composables.Tela
 
 class MainActivity : AppCompatActivity() {
@@ -17,39 +17,39 @@ class MainActivity : AppCompatActivity() {
         setContent {
             val atalhos = listOf(
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_codigo_barra).resource.resource,
+                    painterResource(R.drawable.ic_codigo_barra),
                     "Pagar",
                 ),
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_indicar_amigos).resource.resource,
+                    painterResource(R.drawable.ic_indicar_amigos),
                     "Indicar amigos",
                 ),
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_dinheiro).resource.resource,
+                    painterResource(R.drawable.ic_dinheiro),
                     "Transferir",
                 ),
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_dinheiro).resource.resource,
+                    painterResource(R.drawable.ic_dinheiro),
                     "Depositar",
                 ),
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_cartao_credito).resource.resource,
+                    painterResource(R.drawable.ic_cartao_credito),
                     "Cartão virtual",
                 ),
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_celular).resource.resource,
+                    painterResource(R.drawable.ic_celular),
                     "Recarga de celular",
                 ),
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_ajustar_limite).resource.resource,
+                    painterResource(R.drawable.ic_ajustar_limite),
                     "Ajustar limite",
                 ),
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_cadeado).resource.resource,
+                    painterResource(R.drawable.ic_cadeado),
                     "Bloquear cartão",
                 ),
                 DadosAtalhos(
-                    loadVectorResource(R.drawable.ic_ajuda).resource.resource,
+                    painterResource(R.drawable.ic_ajuda),
                     "Me ajuda",
                 ),
             )
